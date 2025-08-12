@@ -17,59 +17,6 @@
 <img width="1599" height="733" alt="image" src="https://github.com/user-attachments/assets/20fa1437-25d8-4884-81df-a442485056fe" />
 
 
-## ✨ Features
-
-🎨 **Modern Glassmorphism Design**
-- Beautiful dual-panel layout with mountain background
-- Glass blur effects and smooth gradients
-- Professional typography with Inter font family
-
-📱 **Fully Responsive**
-- Mobile-first design approach
-- Optimized for all screen sizes
-- Touch-friendly interface on mobile devices
-
-🔐 **Interactive Form Elements**
-- Real-time form validation
-- Password visibility toggle with eye icon
-- Loading states and error feedback
-
-🎯 **User Experience**
-- Smooth animations and transitions
-- Social login buttons (Google & Apple)
-- Terms & conditions checkbox validation
-
-⚡ **Performance Optimized**
-- Vanilla JavaScript (no dependencies)
-- Clean, semantic HTML structure
-- Efficient CSS with modern techniques
-
-
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Any modern web browser
-- No additional dependencies required!
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/abhiii9vvv/ModernSignUpPage.git
-   ```
-
-2. **Navigate to the project directory**
-   ```bash
-   cd ModernSignUpPage
-   ```
-
-3. **Open in your browser**
-   ```bash
-   # Simply open index.html in your preferred browser
-   open index.html
-   ```
-
 ### Live Demo
 Visit the live demo: [https://abhiii9vvv.github.io/ModernSignUpPage](https://abhiii9vvv.github.io/ModernSignUpPage)
 
