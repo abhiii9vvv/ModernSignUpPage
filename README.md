@@ -8,11 +8,14 @@
 
 **A stunning, responsive signup page with glassmorphism design and smooth animations**
 
-[🚀 Live Demo](https://abhiii9vvv.github.io/ModernSignUpPage) • [📁 Repository](https://github.com/abhiii9vvv/ModernSignUpPage) • [🐛 Report Bug](https://github.com/abhiii9vvv/ModernSignUpPage/issues)
+[🚀 Live Demo](https://abhiii9vvv.github.io/ModernSignUpPage) --- [📁 Repository](https://github.com/abhiii9vvv/ModernSignUpPage) --- [🐛 Report Bug](https://github.com/abhiii9vvv/ModernSignUpPage/issues)
 
 </div>
 
 ---
+
+<img width="1599" height="733" alt="image" src="https://github.com/user-attachments/assets/20fa1437-25d8-4884-81df-a442485056fe" />
+
 
 ## ✨ Features
 
@@ -102,58 +105,6 @@ ModernSignUpPage/
 ├── 🏷️ Logo.png            # Brand logo
 └── 📖 README.md           # Project documentation
 ```
-
----
-
-## 🎨 Design Features
-
-### Color Palette
-- **Primary Gradient**: `#6366f1` → `#8b5cf6` → `#a855f7`
-- **Background**: `#2e2d3a`
-- **Text Primary**: `#ffffff`
-- **Text Secondary**: `#9ca3af`
-- **Accent**: `#8b7cf6`
-
-### Typography
-- **Font Family**: Inter (Google Fonts)
-- **Weights**: 400, 500, 600, 700
-- **Responsive scaling** for optimal readability
-
-### Animations
-- Smooth hover transitions
-- Form validation feedback
-- Loading state animations
-- Glass blur effects
-
----
-
-## 📱 Responsive Breakpoints
-
-| Device | Breakpoint | Layout |
-|--------|------------|--------|
-| Desktop | `> 768px` | Dual-panel horizontal |
-| Tablet | `≤ 768px` | Stacked vertical |
-| Mobile | `≤ 480px` | Optimized single column |
-
----
-
-## 🔧 Customization
-
-### Changing Colors
-Update the CSS custom properties in `style.css`:
-```css
-:root {
-  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
-  --background-color: #2e2d3a;
-  --text-primary: #ffffff;
-  --text-secondary: #9ca3af;
-}
-```
-
-### Adding New Features
-1. Form fields can be easily added to the HTML structure
-2. Validation logic is modular in the JavaScript section
-3. CSS classes follow BEM methodology for easy extension
 
 ---
 
