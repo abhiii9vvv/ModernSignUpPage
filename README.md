@@ -44,16 +44,7 @@
 - Clean, semantic HTML structure
 - Efficient CSS with modern techniques
 
----
 
-## 🖼️ Preview
-
-<div align="center">
-  <img src="https://via.placeholder.com/800x500/6366f1/ffffff?text=Desktop+Preview" alt="Desktop Preview" width="49%">
-  <img src="https://via.placeholder.com/400x600/8b5cf6/ffffff?text=Mobile+Preview" alt="Mobile Preview" width="49%">
-</div>
-
----
 
 ## 🚀 Quick Start
 
