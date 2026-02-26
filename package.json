@@ -1,5 +1,6 @@
 {
-  "name": "loginsignuppage",
+  "type": "module",
+  "name": "login-signup-api",
   "version": "1.0.0",
   "description": "<div align=\"center\">",
   "main": "script.js",
@@ -15,7 +16,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/abhiii9vvv/ModernSignUpPage/issues"
   },
