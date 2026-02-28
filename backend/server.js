@@ -3,9 +3,15 @@ import cors from 'cors'; // Cross-origin requests allow karne ke liye
 import dotenv from 'dotenv'; // Environment variables load karne ke liye
 import bodyParser from 'body-parser'; // Request body parse karne ke liye
 import mongoose from 'mongoose';
-import { error } from 'node:console';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
 
-dotenv.config();
+import authRoutes from './routes/auth.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+dotenv.config({ path: path.join(__dirname, '.env') });
 
 const app=express();
 
@@ -19,12 +25,11 @@ app.use(bodyParser.json());
 // Parse incoming URL-encoded request bodies
 app.use(bodyParser.urlencoded({extended:true}));
 
+app.use('/api/auth',authRoutes);
+
 const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/loginsignup';
 
-mongoose.connect(mongoURI,{
-    useNewUrlParser:true,
-    useUnifiedTopology:true,
-})
+mongoose.connect(mongoURI)
 .then(()=> console.log('MongoDB connected'))
 .catch(err=>console.log('MongoDB connection error:',err));
 
