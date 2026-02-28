@@ -98,9 +98,20 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       if (data.token) {
         localStorage.setItem("token", data.token);
+        localStorage.setItem("userData", JSON.stringify({
+          firstName: data.user.firstName,
+          lastName: data.user.lastName,
+          email: data.user.email
+        }));
       }
 
-      alert(data.message || "Account created succesfully!");
+      alert(data.message || "Account created successfully!");
+      
+      // Redirect to dashboard after successful signup
+      setTimeout(() => {
+        window.location.href = "dashboard.html";
+      }, 500);
+      
       form.reset();
     } catch (error) {
       alert(error.message || "Something Went wrong");

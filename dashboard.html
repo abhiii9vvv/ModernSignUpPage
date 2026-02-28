@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Welcome</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .dashboard-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 48px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #1f2937;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .welcome-text {
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 32px;
+        }
+
+        .user-info {
+            background: #f9fafb;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .info-value {
+            color: #6b7280;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            flex: 1;
+            min-width: 140px;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-logout {
+            background: #ef4444;
+            color: white;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+        }
+
+        .btn-logout:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f4f6;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 640px) {
+            .dashboard-container {
+                padding: 32px 24px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .avatar {
+                width: 100px;
+                height: 100px;
+                font-size: 40px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p style="margin-top: 20px; color: white; font-size: 16px;">Loading...</p>
+    </div>
+
+    <div class="dashboard-container" id="dashboard" style="display: none;">
+        <div class="avatar" id="userAvatar">👤</div>
+        <h1 id="userName">Welcome</h1>
+        <p class="welcome-text">You have successfully logged in!</p>
+        
+        <div class="user-info">
+            <div class="info-row">
+                <span class="info-label">Name:</span>
+                <span class="info-value" id="userFullName">-</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Email:</span>
+                <span class="info-value" id="userEmail">-</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Status:</span>
+                <span class="info-value" style="color: #10b981; font-weight: 600;">● Active</span>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn btn-primary" onclick="window.location.href='index.html'">
+                Back to Home
+            </button>
+            <button class="btn btn-logout" id="logoutBtn">
+                Logout
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Check authentication on page load
+        document.addEventListener('DOMContentLoaded', async function() {
+            const token = localStorage.getItem('token');
+            const loading = document.getElementById('loading');
+            const dashboard = document.getElementById('dashboard');
+
+            loading.style.display = 'block';
+
+            // If no token, redirect to login page
+            if (!token) {
+                setTimeout(() => {
+                    alert('Please login to access the dashboard');
+                    window.location.href = 'index.html';
+                }, 1000);
+                return;
+            }
+
+            // Try to get user info from localStorage (saved during login/signup)
+            const userDataStr = localStorage.getItem('userData');
+            
+            if (userDataStr) {
+                try {
+                    const userData = JSON.parse(userDataStr);
+                    displayUserInfo(userData);
+                    loading.style.display = 'none';
+                    dashboard.style.display = 'block';
+                } catch (error) {
+                    console.error('Error parsing user data:', error);
+                    redirectToLogin();
+                }
+            } else {
+                // If no user data in localStorage, try to decode from token or redirect
+                redirectToLogin();
+            }
+        });
+
+        function displayUserInfo(userData) {
+            const userName = document.getElementById('userName');
+            const userFullName = document.getElementById('userFullName');
+            const userEmail = document.getElementById('userEmail');
+            const userAvatar = document.getElementById('userAvatar');
+
+            const firstName = userData.firstName || 'User';
+            const lastName = userData.lastName || '';
+            const email = userData.email || '';
+
+            // Display user information
+            userName.textContent = `Welcome, ${firstName}!`;
+            userFullName.textContent = `${firstName} ${lastName}`.trim();
+            userEmail.textContent = email;
+
+            // Set avatar with first letter of first name
+            userAvatar.textContent = firstName.charAt(0).toUpperCase();
+        }
+
+        function redirectToLogin() {
+            setTimeout(() => {
+                alert('Session expired. Please login again.');
+                localStorage.removeItem('token');
+                localStorage.removeItem('userData');
+                window.location.href = 'index.html';
+            }, 1000);
+        }
+
+        // Logout functionality
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            if (confirm('Are you sure you want to logout?')) {
+                localStorage.removeItem('token');
+                localStorage.removeItem('userData');
+                alert('You have been logged out successfully');
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>
