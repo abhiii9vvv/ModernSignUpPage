@@ -3,6 +3,8 @@ import cors from 'cors'; // Cross-origin requests allow karne ke liye
 import dotenv from 'dotenv'; // Environment variables load karne ke liye
 import bodyParser from 'body-parser'; // Request body parse karne ke liye
 import mongoose from 'mongoose';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
@@ -15,6 +17,8 @@ dotenv.config({ path: path.join(__dirname, '.env') });
 
 const app=express();
 
+app.use(helemt());
+
 // Initialize express app and configure middleware
 // Enable CORS to allow cross-origin requests
 app.use(cors());
@@ -25,7 +29,15 @@ app.use(bodyParser.json());
 // Parse incoming URL-encoded request bodies
 app.use(bodyParser.urlencoded({extended:true}));
 
-app.use('/api/auth',authRoutes);
+const authLimiter = rateLimit({
+    windowMs:15*60*1000,
+    max:10,
+    standardHeaders:true,
+    legacyHeaders:false,
+    message:{message:'Too many auth request. Please try again later'}
+});
+
+app.use('/api/auth',authRoutes,authRoutes);
 
 const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/loginsignup';
 
