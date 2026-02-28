@@ -1,211 +1,144 @@
-# 🌟 Modern SignUp Page
+# SignSecure - Modern Authentication System
 
-<div align="center">
+A full-stack authentication system with modern UI and secure REST API built with Node.js, Express, MongoDB, and JWT.
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+**[Live Demo](https://abhiii9vvv.github.io/SignSecure)** | **[Report Bug](https://github.com/abhiii9vvv/SignSecure/issues)**
 
-**A stunning, responsive signup page with glassmorphism design and smooth animations**
+## Features
 
-[🚀 Live Demo](https://abhiii9vvv.github.io/ModernSignUpPage) • [📁 Repository](https://github.com/abhiii9vvv/ModernSignUpPage) • [🐛 Report Bug](https://github.com/abhiii9vvv/ModernSignUpPage/issues)
-
-</div>
-
----
-
-## ✨ Features
-
-🎨 **Modern Glassmorphism Design**
-- Beautiful dual-panel layout with mountain background
-- Glass blur effects and smooth gradients
-- Professional typography with Inter font family
-
-📱 **Fully Responsive**
-- Mobile-first design approach
-- Optimized for all screen sizes
-- Touch-friendly interface on mobile devices
-
-🔐 **Interactive Form Elements**
-- Real-time form validation
-- Password visibility toggle with eye icon
-- Loading states and error feedback
-
-🎯 **User Experience**
-- Smooth animations and transitions
-- Social login buttons (Google & Apple)
-- Terms & conditions checkbox validation
-
-⚡ **Performance Optimized**
-- Vanilla JavaScript (no dependencies)
-- Clean, semantic HTML structure
-- Efficient CSS with modern techniques
+- Modern glassmorphism design with responsive layout
+- JWT-based authentication with bcrypt password hashing
+- MongoDB integration with Mongoose ODM
+- Input validation and rate limiting (10 req/15min)
+- Security headers (Helmet.js) and CORS support
+- Real-time form validation and loading states
 
 ---
 
-## 🖼️ Preview
+## Quick Start
 
-<div align="center">
-  <img src="https://via.placeholder.com/800x500/6366f1/ffffff?text=Desktop+Preview" alt="Desktop Preview" width="49%">
-  <img src="https://via.placeholder.com/400x600/8b5cf6/ffffff?text=Mobile+Preview" alt="Mobile Preview" width="49%">
-</div>
+**Prerequisites:** Node.js v14+, MongoDB
 
----
+```bash
+# Clone and install
+git clone https://github.com/abhiii9vvv/SignSecure.git
+cd SignSecure
+npm install
 
-## 🚀 Quick Start
+# Configure environment (create backend/.env)
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/loginsignup
+JWT_SECRET=your_super_secret_jwt_key
+NODE_ENV=development
 
-### Prerequisites
-- Any modern web browser
-- No additional dependencies required!
+# Run development server
+npm run dev
 
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/abhiii9vvv/ModernSignUpPage.git
-   ```
-
-2. **Navigate to the project directory**
-   ```bash
-   cd ModernSignUpPage
-   ```
-
-3. **Open in your browser**
-   ```bash
-   # Simply open index.html in your preferred browser
-   open index.html
-   ```
-
-### Live Demo
-Visit the live demo: [https://abhiii9vvv.github.io/ModernSignUpPage](https://abhiii9vvv.github.io/ModernSignUpPage)
-
----
-
-## 🛠️ Technology Stack
-
-| Technology | Purpose | Version |
-|------------|---------|---------|
-| HTML5 | Structure & Semantics | Latest |
-| CSS3 | Styling & Animations | Latest |
-| JavaScript | Interactivity | ES6+ |
-| Inter Font | Typography | Google Fonts |
-
----
-
-## 📂 Project Structure
-
-```
-ModernSignUpPage/
-├── 📄 index.html          # Main HTML file
-├── 🎨 style.css           # Stylesheet with responsive design
-├── 🖼️ mountain.jpeg       # Background image
-├── 🏷️ Logo.png            # Brand logo
-└── 📖 README.md           # Project documentation
+# Access
+# Frontend: index.html
+# Backend API: http://localhost:5000
 ```
 
 ---
 
-## 🎨 Design Features
+## Tech Stack
 
-### Color Palette
-- **Primary Gradient**: `#6366f1` → `#8b5cf6` → `#a855f7`
-- **Background**: `#2e2d3a`
-- **Text Primary**: `#ffffff`
-- **Text Secondary**: `#9ca3af`
-- **Accent**: `#8b7cf6`
-
-### Typography
-- **Font Family**: Inter (Google Fonts)
-- **Weights**: 400, 500, 600, 700
-- **Responsive scaling** for optimal readability
-
-### Animations
-- Smooth hover transitions
-- Form validation feedback
-- Loading state animations
-- Glass blur effects
+**Frontend:** HTML5, CSS3, JavaScript (ES6+)  
+**Backend:** Node.js, Express.js 5.2.1  
+**Database:** MongoDB, Mongoose 9.2.2  
+**Authentication:** JWT 9.0.3, Bcryptjs 3.0.3  
+**Security:** Helmet 8.1.0, CORS 2.8.6, Express Rate Limit 8.2.1, Express Validator 7.3.1  
+**Dev Tools:** Nodemon 3.1.14
 
 ---
 
-## 📱 Responsive Breakpoints
+## Project Structure
 
-| Device | Breakpoint | Layout |
-|--------|------------|--------|
-| Desktop | `> 768px` | Dual-panel horizontal |
-| Tablet | `≤ 768px` | Stacked vertical |
-| Mobile | `≤ 480px` | Optimized single column |
+```
+LoginSignUpPAGE/
+├── index.html              # Signup page
+├── login.html              # Login page
+├── dashboard.html          # User dashboard
+├── style.css               # Styles
+├── script.js               # Client-side JS
+├── package.json            # Dependencies
+└── backend/
+    ├── server.js           # Express server
+    ├── config/db.js        # Database config
+    ├── controller/authController.js
+    ├── middleware/auth.js  # JWT verification
+    ├── models/User.js      # User model
+    └── routes/auth.js      # Auth routes
+```
 
 ---
 
-## 🔧 Customization
+## API Endpoints
 
-### Changing Colors
-Update the CSS custom properties in `style.css`:
-```css
-:root {
-  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
-  --background-color: #2e2d3a;
-  --text-primary: #ffffff;
-  --text-secondary: #9ca3af;
+**Base URL:** `http://localhost:5000/api/auth`
+
+### POST /signup
+```json
+// Request
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john@example.com",
+  "password": "SecurePass123!"
+}
+
+// Response (201)
+{
+  "message": "User created successfully",
+  "token": "eyJhbGciOiJIUzI1NiIs...",
+  "user": { "firstName": "John", "email": "john@example.com" }
 }
 ```
 
-### Adding New Features
-1. Form fields can be easily added to the HTML structure
-2. Validation logic is modular in the JavaScript section
-3. CSS classes follow BEM methodology for easy extension
+### POST /login
+```json
+// Request
+{
+  "email": "john@example.com",
+  "password": "SecurePass123!"
+}
+
+// Response (200)
+{
+  "message": "Login successful",
+  "token": "eyJhbGciOiJIUzI1NiIs...",
+  "user": { "firstName": "John", "email": "john@example.com" }
+}
+```
+
+**Validation:**
+- Password: Min 6 chars, must include uppercase, lowercase, number, symbol
+- Email: Valid format required
+- Names: 2-50 characters
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-Contributions are welcome! Here's how you can help:
-
-1. 🍴 **Fork the repository**
-2. 🌿 **Create a feature branch** (`git checkout -b feature/amazing-feature`)
-3. 💾 **Commit your changes** (`git commit -m 'Add amazing feature'`)
-4. 📤 **Push to the branch** (`git push origin feature/amazing-feature`)
-5. 🔄 **Open a Pull Request**
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ---
 
-## 📄 License
+## Author
 
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-## 👨‍💻 Author
-
-<div align="center">
-
-**ABHINAV TIWARY**
-
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/abhiii9vvv)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/abhinav-tiwary-791a63302/)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:2023281975.abhinav@ug.sharda.ac.in)
-
-*Full Stack Developer | UI/UX Enthusiast | Open Source Contributor*
-
-</div>
+**Abhinav Tiwary**  
+[GitHub](https://github.com/abhiii9vvv) • [LinkedIn](https://www.linkedin.com/in/abhinav-tiwary-791a63302/) • [Email](mailto:2023281975.abhinav@ug.sharda.ac.in)
 
 ---
 
-## 💖 Support
+## License
 
-If you found this project helpful, please consider:
-
-- ⭐ **Starring the repository**
-- 🍴 **Forking for your own projects**
-- 🐛 **Reporting issues or bugs**
-- 💡 **Suggesting new features**
+MIT License - feel free to use this project for learning and development.
 
 ---
 
-<div align="center">
-
-**Made with ❤️ by [Abhinav Tiwary](https://github.com/abhiii9vvv)**
-
-*© 2025 ModernSignUpPage. All rights reserved.*
-
-</div>
+<div align="center">Made with ❤️ by Abhinav Tiwary</div>
